@@ -17,15 +17,11 @@ for (let i = 0; i < testSections.length; i++) {
   testSections[i].insertAdjacentHTML("beforeend", TEST_SECTION);
 }
 
-// console.log(document.getElementsByClassName("section-bar-arrow"));
-// document.getElementsByClassName("section-bar-arrow").forEach((element) => {
-//   element.addEventListener("click", function (element) {
-//     element.classList.add("arrow-open");
-//   });
-// });
-
 for (const iterator of document.getElementsByClassName("section-bar-arrow")) {
   iterator.addEventListener("click", function (e) {
-    iterator.classList.toggle("arrow-open");
+    iterator.classList.toggle("section-arrow-open");
+    iterator.parentElement.nextElementSibling.classList.toggle(
+      "section-content-open"
+    );
   });
 }

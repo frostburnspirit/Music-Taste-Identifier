@@ -5,7 +5,7 @@
 :root {
   --header-height: 150px;
   --footer-height: 50px;
-  --section-bar-height: 5vw;
+  --section-bar-height: 2vw;
 }
 
 header {
@@ -25,7 +25,6 @@ main {
 .test-section {
   width: 80vw;
   height: fit-content;
-  background-color: black;
   margin: 10px auto;
   border-radius: 10px;
   overflow: hidden;
@@ -51,13 +50,22 @@ main {
   font-size: var(--section-bar-height);
 }
 
-.arrow-open {
+.section-arrow-open {
   rotate: 270deg;
 }
 
 .section-content {
-  padding: 1vw;
+  padding: 0;
   color: white;
+  background-color: black;
+  transition: 100ms;
+  height: 0;
+  display: flex;
+}
+
+.section-content-open {
+  height: 100px;
+  padding: 1vw;
 }
 
 p {
