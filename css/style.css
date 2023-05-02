@@ -36,18 +36,28 @@ main {
   align-items: center;
   height: var(--section-bar-height);
   background-color: cyan;
+  padding: 10px;
 }
 
 .section-bar h2 {
   background-color: red;
+  flex: 1;
 }
 
-.section-bar button {
+.section-bar a {
   width: var(--section-bar-height);
+  aspect-ratio: 1;
+  transition: 100ms;
+  font-size: var(--section-bar-height);
+}
+
+.arrow-open {
+  rotate: 270deg;
 }
 
 .section-content {
   padding: 1vw;
+  color: white;
 }
 
 p {
