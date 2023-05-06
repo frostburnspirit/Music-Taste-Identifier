@@ -59,8 +59,11 @@ main {
   background-color: black;
   transition: 100ms ease-in-out;
   display: flex;
+  flex-wrap: wrap;
   height: 10%;
   max-height: 0;
+  gap: 10px;
+  justify-content: center;
 }
 
 .section-content-open {
@@ -78,11 +81,30 @@ footer {
   background-color: gray;
 }
 
-.section-content form label,
-input {
+.section-content .range-container {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+}
+
+.section-content .range-container label,
+.section-content .range-container input {
   display: inline-block;
   text-align: center;
-  width: 100%;
+  /* flex-basis: 20%; */
+}
+
+.section-content img,
+.section-content h3 {
+  /* max-height: 20vh; */
+}
+
+.flex-center {
+}
+
+.flex-br {
+  flex-basis: 100%;
+  width: 0;
 }
 
 /* KOLLA DUBLESERING AV CSS */

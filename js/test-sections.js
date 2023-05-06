@@ -16,29 +16,36 @@ let sectionData = [
   {
     title: "Genre Sliders",
     content: `
-    <form>
-      <label for="slider-acoustic-electronic">Acoustic vs Electronic</label><br>
-      <input type="range" min="0" max="10" id="slider-acoustic-electronic" name="slider-acoustic-electronic"><br>
-      <label for="slider-major-minor">Major vs Minor</label><br>
-      <input type="range" min="0" max="10" id="slider-major-minor" name="slider-major-minor"><br>
-      <label for="slider-instrumental-acapella">Instrumental vs Acapella</label><br>
-      <input type="range" min="0" max="10" id="slider-instrumental-acapella" name="slider-instrumental-acapella"><br>
-      <label for="slider-pure-chaotic">Pure vs Chaotic</label><br>
-      <input type="range" min="0" max="10" id="slider-pure-chaotic" name="slider-pure-chaotic"><br>
-      <label for="slider-calm-energetic">Calm vs Energetic</label><br>
-      <input type="range" min="0" max="10" id="slider-calm-energetic" name="slider-calm-energetic"><br>
-      <label for="slider-deep-bright">Deep vs Bright</label><br>
-      <input type="range" min="0" max="10" id="slider-deep-bright" name="slider-deep-bright"><br>
-    </form>`,
+    <div class="range-container">
+      <label for="acoustic-electronic">Acoustic vs Electronic</label>
+      <input type="range" min="0" max="10" id="acoustic-electronic" name="acoustic-electronic">
+      <label for="major-minor">Major vs Minor</label>
+      <input type="range" min="0" max="10" id="major-minor" name="major-minor">
+      <label for="instrumental-acapella">Instrumental vs Acapella</label>
+      <input type="range" min="0" max="10" id="instrumental-acapella" name="instrumental-acapella">
+      <div class="flex-br"></div>
+      <label for="pure-chaotic">Pure vs Chaotic</label>
+      <input type="range" min="0" max="10" id="pure-chaotic" name="pure-chaotic">
+      <label for="calm-energetic">Calm vs Energetic</label>
+      <input type="range" min="0" max="10" id="calm-energetic" name="calm-energetic">
+      <label for="deep-bright">Deep vs Bright</label>
+      <input type="range" min="0" max="10" id="deep-bright" name="deep-bright">
+    </div>`,
   },
   {
     title: "Listening 1",
     content: `
     <h3>Listen to this music..</h3>
-    <img src="images/Mimic.png" />
-    <p>opinion</p>
-    <label for="slider-deep-bright">Deep vs Bright</label><br>
-    <input type="button" min="0" max="10" id="slider-deep-bright" name="slider-deep-bright"><br>
+    <div class="flex-br"></div>
+    <img class="flex-center" src="images/Mimic.png" />
+    <div class="flex-br"></div>
+    <div class="button-container flex-center">
+      <p>opinion</p>
+      <input type="hidden" name="buttons-l1" id="buttons-l1" value="">
+      <button onclick="select(this); nextSection(this)">button1</button>
+      <button onclick="select(this); nextSection(this)">button1</button>
+      <button onclick="select(this); nextSection(this)">button1</button>
+    <div>
 `,
   },
   {
@@ -46,7 +53,8 @@ let sectionData = [
     content: `
     <h1>Welcome</h1>
     <img src="images/Mimic.png" />
-    <h1>bbb</h1>`,
+    <h1>bbb</h1>
+    <input type="submit">`,
   },
   {
     title: "Intro",

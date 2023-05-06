@@ -1,5 +1,28 @@
 const sectionContainer = document.getElementById("the-test");
 
+function nextSection(sectionChild) {
+  let currentElement = sectionChild;
+  for (let i = 0; i < 100; i++) {
+    if (currentElement.classList.contains("test-section")) {
+      currentElement
+        .getElementsByClassName("section-content")[0]
+        .classList.remove("section-content-open");
+      currentElement.nextElementSibling
+        .getElementsByClassName("section-content")[0]
+        .classList.add("section-content-open");
+
+      return;
+    } else {
+      currentElement = currentElement.parentElement;
+    }
+  }
+  throw new Error("No test section found");
+}
+
+function select(button) {
+  console.log(button.parentElement.querySelectorAll("input[type=hidden]")[0]);
+}
+
 for (let i = 0; i < sectionData.length; i++) {
   const DATA = sectionData[i];
 
@@ -14,7 +37,7 @@ for (let i = 0; i < sectionData.length; i++) {
       <div class="section-content">
         ${DATA.content}
       </div>
-    <section>`;
+    </section>`;
   sectionContainer.insertAdjacentHTML("beforeend", TEST_SECTION);
 }
 
