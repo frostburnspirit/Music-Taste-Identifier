@@ -20,7 +20,8 @@ function nextSection(sectionChild) {
 }
 
 function select(button) {
-  console.log(button.parentElement.querySelectorAll("input[type=hidden]")[0]);
+  button.parentElement.querySelectorAll("input[type=hidden]")[0].value =
+    button.id;
 }
 
 for (let i = 0; i < sectionData.length; i++) {

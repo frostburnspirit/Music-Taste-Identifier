@@ -4,14 +4,18 @@ let sectionData = [
     content: `
     <h1>Welcome</h1>
     <img src="images/Mimic.png" />
-    <h1>bbb</h1>`,
+    <h1>bbb</h1>
+    <div class="flex-br"></div>
+    <button onclick="nextSection(this); return false;">continue</button>`,
   },
   {
     title: "Options",
     content: `
     <h1>Welcome</h1>
     <img src="images/Mimic.png" />
-    <h1>bbb</h1>`,
+    <h1>bbb</h1>
+    <div class="flex-br"></div>
+    <button onclick="nextSection(this); return false;">continue</button>`,
   },
   {
     title: "Genre Sliders",
@@ -30,7 +34,8 @@ let sectionData = [
       <input type="range" min="0" max="10" id="calm-energetic" name="calm-energetic">
       <label for="deep-bright">Deep vs Bright</label>
       <input type="range" min="0" max="10" id="deep-bright" name="deep-bright">
-    </div>`,
+    </div>
+    <button onclick="nextSection(this); return false;">continue</button>`,
   },
   {
     title: "Listening 1",
@@ -42,9 +47,9 @@ let sectionData = [
     <div class="button-container flex-center">
       <p>opinion</p>
       <input type="hidden" name="buttons-l1" id="buttons-l1" value="">
-      <button onclick="select(this); nextSection(this)">button1</button>
-      <button onclick="select(this); nextSection(this)">button1</button>
-      <button onclick="select(this); nextSection(this)">button1</button>
+      <button onclick="select(this); nextSection(this); return false;" id="button1">button1</button>
+      <button onclick="select(this); nextSection(this); return false;" id="button2">button2</button>
+      <button onclick="select(this); nextSection(this); return false;" id="button3">button3</button>
     <div>
 `,
   },
@@ -54,35 +59,8 @@ let sectionData = [
     <h1>Welcome</h1>
     <img src="images/Mimic.png" />
     <h1>bbb</h1>
+    <div class="flex-br"></div>
     <input type="submit">`,
-  },
-  {
-    title: "Intro",
-    content: `
-    <h1>Welcome</h1>
-    <img src="images/Mimic.png" />
-    <h1>bbb</h1>`,
-  },
-  {
-    title: "Intro",
-    content: `
-    <h1>Welcome</h1>
-    <img src="images/Mimic.png" />
-    <h1>bbb</h1>`,
-  },
-  {
-    title: "Intro",
-    content: `
-    <h1>Welcome</h1>
-    <img src="images/Mimic.png" />
-    <h1>bbb</h1>`,
-  },
-  {
-    title: "Intro",
-    content: `
-    <h1>Welcome</h1>
-    <img src="images/Mimic.png" />
-    <h1>bbb</h1>`,
   },
 ];
 
