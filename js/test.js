@@ -28,12 +28,12 @@ for (let i = 0; i < sectionData.length; i++) {
   const DATA = sectionData[i];
 
   const TEST_SECTION = `
-    <section class="test-section">
+    <section id="section-${i + 1}" class="test-section">
       <div class="section-bar">
         <h2>
           ${DATA.title}
         </h2>
-        <a class="section-bar-arrow fa-solid fa-angle-left"></a>
+        <div class="section-bar-arrow fa-solid fa-angle-left"></div>
       </div>
       <div class="section-content">
         ${DATA.content}

@@ -1,11 +1,19 @@
 * {
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 :root {
   --header-height: 150px;
   --footer-height: 50px;
   --section-bar-height: 2vw;
+}
+
+body {
+  background-color: black;
+  background-image: url("../images/space.jpg");
+  background-size: 100vw;
+  background-attachment: fixed;
 }
 
 header {
@@ -15,11 +23,34 @@ header {
   justify-content: center;
 }
 
+nav {
+  background-color: purple;
+  height: 80%;
+  width: 80%;
+  align-self: center;
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+nav ul li {
+  background-color: white;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 main {
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
   display: flex;
   flex-direction: column;
-  background-color: rgb(122, 122, 2);
 }
 
 .test-section {
@@ -76,11 +107,6 @@ p {
   color: white;
 }
 
-footer {
-  height: var(--header-height);
-  background-color: gray;
-}
-
 .section-content .range-container {
   display: flex;
   flex-flow: column wrap;
@@ -107,4 +133,22 @@ footer {
   width: 0;
 }
 
+footer {
+  height: var(--header-height);
+  background-color: gray;
+  display: flex;
+}
+
+footer div {
+  flex: 1;
+}
+
 /* KOLLA DUBLESERING AV CSS */
+
+/*IDEAS:
+0.5x speed scrolling background
+clickable section bar
+on hover effects for everything
+music sliders sound on hover
+scrolling through javascript on section open
+*/
