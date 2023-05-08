@@ -5,6 +5,7 @@
 
 :root {
   --header-height: 150px;
+  --logo-size: calc(var(--header-height) / 4);
   --footer-height: 50px;
   --section-bar-height: 2vw;
 }
@@ -21,6 +22,50 @@ header {
   height: var(--header-height);
   background-color: blue;
   justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  display: flex;
+  height: var(--logo-size);
+}
+
+#logo-image {
+  position: relative;
+  flex: 1;
+  background-color: black;
+  height: inherit;
+  aspect-ratio: 1;
+  border: calc(var(--logo-size) * 0.15) solid black;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.logo-icon {
+  color: lime;
+  position: absolute;
+  left: calc(var(--logo-size) * 0.5);
+  transform: translate(-50%);
+}
+
+#logo-lines-top {
+  top: calc(var(--logo-size) * -0.47);
+  font-size: calc(var(--logo-size) * 1.3);
+}
+
+#logo-lines-bottom {
+  top: calc(var(--logo-size) * -0.9);
+  font-size: calc(var(--logo-size) * 2);
+}
+
+#logo-fire {
+  top: calc(var(--logo-size) * 0.1);
+  font-size: calc(var(--logo-size) * 0.55);
+}
+
+#logo h1 {
+  flex: 2;
+  font-size: var(--logo-size);
 }
 
 nav {
@@ -140,6 +185,21 @@ footer {
 }
 
 footer div {
+  flex: 3;
+  background-color: lightcoral;
+  margin: 10px;
+  flex-wrap: wrap;
+  height: fit-content;
+}
+
+#footer-links {
+  flex: 2;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2rem;
+}
+
+#footer-language {
   flex: 1;
 }
 

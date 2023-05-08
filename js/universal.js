@@ -1,7 +1,17 @@
 let header = document.getElementById("header");
 let footer = document.getElementById("footer");
 
-let navHtml = `
+let headerHtml = `
+<div id="logo">
+    <div id="logo-image">
+        <i id="logo-lines-top" class="fa-regular fa-circle logo-icon"></i>
+        <i id="logo-lines-bottom" class="fa-regular fa-circle logo-icon"></i>
+        <i id="logo-fire" class="fa-solid fa-fire logo-icon"></i>
+    </div>
+    <h1>
+        Spotifry
+    </h1>
+</div>
 <nav>
     <ul>
         <li>
@@ -15,7 +25,7 @@ let navHtml = `
         </li>
     </ul>
 </nav>`;
-header.insertAdjacentHTML("beforeend", navHtml);
+header.insertAdjacentHTML("beforeend", headerHtml);
 
 let footerHtml = `
 <div id="footer-resources">
@@ -44,7 +54,13 @@ let footerHtml = `
         </li>
     </ul>
 </div>
-<div id="footer-socials">
+<div id="footer-links">
+    <h2>aaa</h2>
+    <div class="flex-br"></div>
+    <i class="fa-brands fa-github"></i>
+    <i class="fa-brands fa-discord"></i>
+    <i class="fa-brands fa-youtube"></i>
+    <i class="fa-brands fa-spotify"></i>
 </div>
 <div id="footer-language">
 </div>
