@@ -4,7 +4,7 @@ let sectionData = [
     content: `
     <h1>Welcome</h1>
     <img src="images/Mimic.png" />
-    <h1>bbb</h1>
+    <h2>bbb</h2>
     <div class="flex-br"></div>
     <button onclick="nextSection(this); return false;">continue</button>`,
   },
@@ -54,7 +54,7 @@ let sectionData = [
 `,
   },
   {
-    title: "Intro",
+    title: "End",
     content: `
     <h1>Welcome</h1>
     <img src="images/Mimic.png" />

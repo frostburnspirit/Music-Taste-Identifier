@@ -30,9 +30,9 @@ for (let i = 0; i < sectionData.length; i++) {
   const TEST_SECTION = `
     <section id="section-${i + 1}" class="test-section">
       <div class="section-bar">
-        <h2>
+        <h3>
           ${DATA.title}
-        </h2>
+        </h3>
         <div class="section-bar-arrow fa-solid fa-angle-left"></div>
       </div>
       <div class="section-content">
@@ -42,11 +42,11 @@ for (let i = 0; i < sectionData.length; i++) {
   sectionContainer.insertAdjacentHTML("beforeend", TEST_SECTION);
 }
 
-for (const iterator of document.getElementsByClassName("section-bar-arrow")) {
+for (const iterator of document.getElementsByClassName("section-bar")) {
   iterator.addEventListener("click", function (e) {
-    iterator.classList.toggle("section-arrow-open");
-    iterator.parentElement.nextElementSibling.classList.toggle(
-      "section-content-open"
-    );
+    iterator
+      .getElementsByClassName("section-bar-arrow")[0]
+      .classList.toggle("section-arrow-open");
+    iterator.nextElementSibling.classList.toggle("section-content-open");
   });
 }
