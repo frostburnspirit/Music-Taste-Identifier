@@ -9,7 +9,7 @@
   --footer-height: 50px;
   --section-bar-height: 2vw;
   --blue-1: rgb(34, 0, 35);
-  --blue-2: rgb(48, 23, 94);
+  --blue-2: rgb(48, 26, 105);
   --blue-3: rgb(56, 85, 122);
   --blue-4: rgb(98, 153, 148);
   --fire-1: rgb(255, 170, 0);
@@ -18,7 +18,7 @@
 body {
   background-color: var(--blue-1);
   background-image: url("../images/space.jpg");
-  background-size: 100vw;
+  background-size: cover;
   background-attachment: fixed;
 }
 
@@ -254,7 +254,6 @@ footer div ul li a {
   justify-content: space-evenly;
   text-align: center;
   font-size: 1rem;
-  min-width: 210px;
   margin-left: 5vw;
 }
 
@@ -275,6 +274,13 @@ footer div ul li a {
 }
 
 /* */
+
+/* Media queries */
+@media (min-width: 480px) {
+  #footer-links {
+    min-width: 210px;
+  }
+}
 
 /* KOLLA DUBLESERING AV CSS */
 
