@@ -4,10 +4,9 @@
 }
 
 :root {
-  --header-height: calc(2vw + 40px);
-  --header-size: calc(2vw + 15px);
+  --header-height: 15vh;
+  --header-size: 5vh;
   --footer-height: 50px;
-  --section-bar-height: 2vw;
   --blue-1: rgb(34, 0, 35);
   --blue-2: rgb(48, 26, 105);
   --blue-3: rgb(56, 85, 122);
@@ -65,20 +64,28 @@ h3 {
 /* Header */
 
 header {
-  display: flex;
+  position: relative;
+  display: block;
   height: var(--header-height);
   background-color: var(--blue-1);
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
+header div {
+  margin: 0 5vw;
+}
+
 #logo {
+  position: absolute;
+  transform: translate(0, -50%);
+  top: 50%;
+  left: 0;
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
   height: var(--header-size);
-  flex: 2;
-  margin-right: 2vw;
 }
 
 #logo-image {
@@ -90,11 +97,12 @@ header {
   border: calc(var(--header-size) * 0.15) solid black;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 calc(var(--header-size) / 3);
+  margin-left: calc(var(--header-size) / 3);
+  margin-right: calc(var(--header-size) / 3);
 }
 
 .logo-icon {
-  color: lime;
+  color: var(--fire-1);
   position: absolute;
   left: calc(var(--header-size) * 0.5);
   transform: translate(-50%);
@@ -123,13 +131,15 @@ header {
 nav {
   height: 80%;
   flex: 6;
-  display: flex;
+  display: none;
   align-items: center;
+  justify-content: center;
 }
 
 nav ul {
   display: flex;
   padding-left: 0;
+  gap: 10%;
 }
 
 nav ul li {
@@ -150,6 +160,10 @@ nav ul li a:hover {
 
 #login {
   flex: 1;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 0;
 }
 
 /* */
@@ -163,7 +177,7 @@ main {
 }
 
 .test-section {
-  width: 80vw;
+  width: 100vw;
   height: fit-content;
   margin: 10px auto;
   border-radius: 10px;
@@ -173,7 +187,7 @@ main {
 .section-bar {
   display: flex;
   align-items: center;
-  height: var(--section-bar-height);
+  height: 2vw;
   background-color: var(--blue-3);
   padding: 10px;
 }
@@ -183,10 +197,10 @@ main {
 }
 
 .section-bar-arrow {
-  width: var(--section-bar-height);
+  width: 1.2rem;
   aspect-ratio: 1;
   transition: 170ms;
-  font-size: var(--section-bar-height);
+  font-size: 1.2rem;
 }
 
 .section-arrow-open {
@@ -257,16 +271,20 @@ footer div ul li a {
   margin-left: 5vw;
 }
 
+#footer-links h2 {
+  padding-left: 0;
+}
+
 #footer-links a {
   color: var(--blue-4);
 }
 
-#footer-links i {
+#footer-links a i {
   font-size: 2rem;
 }
 
-#footer-links h2 {
-  padding-left: 0;
+#footer-links a p {
+  display: none;
 }
 
 #footer-language {
@@ -277,8 +295,47 @@ footer div ul li a {
 
 /* Media queries */
 @media (min-width: 480px) {
+  :root {
+    --header-height: calc(2vw + 40px);
+    --header-size: calc(2vw + 15px);
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+  }
+
+  header div {
+    margin: initial;
+  }
+
+  #logo {
+    flex: 2;
+    margin-right: 2vw;
+    position: initial;
+    transform: initial;
+  }
+  #logo-image {
+    margin-right: calc(var(--header-size) / 3);
+  }
+  nav {
+    display: flex;
+    justify-content: flex-start;
+  }
+  #login {
+    position: initial;
+    transform: initial;
+  }
+
+  .test-section {
+    width: 80vw;
+  }
+
   #footer-links {
     min-width: 210px;
+  }
+  #footer-links a p {
+    display: initial;
   }
 }
 

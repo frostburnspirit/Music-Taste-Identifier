@@ -8,7 +8,7 @@ let headerHtml = `
         <i id="logo-lines-bottom" class="fa-regular fa-circle logo-icon"></i>
         <i id="logo-fire" class="fa-solid fa-fire logo-icon"></i>
     </div>
-    <h1>
+    <h1 id="logo-text">
         Frostifry
     </h1>
 </div>
@@ -26,7 +26,7 @@ let headerHtml = `
     </ul>
 </nav>
 <div id="login">
-    hi
+    login
 </div>`;
 header.insertAdjacentHTML("beforeend", headerHtml);
 
@@ -62,10 +62,10 @@ let footerHtml = `
 <div id="footer-links">
     <h2>Links</h2>
     <div class="flex-br"></div>
-    <a href="https://github.com/frostburnspirit/Music-Taste-Identifier" target="_blank"><i class="fa-brands fa-github"></i><p id="github-link-text"></p></a>
-    <a href="https://discord.gg/UBSeZXk7Jb" target="_blank"><i class="fa-brands fa-discord"></i><br><p id="discord-link-text"></p></a>
-    <a href="https://www.youtube.com/@frostburnspirit9065" target="_blank"><i class="fa-brands fa-youtube"></i><br><p id="youtube-link-text"></p></a>
-    <a href="https://open.spotify.com/user/kk2va0daimie47hl2f8xmmcfx?si=90f51ea22f884ae4" target="_blank"><i class="fa-brands fa-spotify"></i><br><p id="spotify-link-text"></p></a>
+    <a href="https://github.com/frostburnspirit/Music-Taste-Identifier" target="_blank"><i class="fa-brands fa-github"></i><p>Github</p></a>
+    <a href="https://discord.gg/UBSeZXk7Jb" target="_blank"><i class="fa-brands fa-discord"></i><br><p>Discord</p></a>
+    <a href="https://www.youtube.com/@frostburnspirit9065" target="_blank"><i class="fa-brands fa-youtube"></i><br><p>YouTube</p></a>
+    <a href="https://open.spotify.com/user/kk2va0daimie47hl2f8xmmcfx?si=90f51ea22f884ae4" target="_blank"><i class="fa-brands fa-spotify"></i><br><p>Spotify</p></a>
 </div>
 <div id="footer-language">
 </div>
@@ -90,22 +90,23 @@ footer.insertAdjacentHTML("beforeend", footerHtml);
 
 */
 
-function editHTML(id, newHTML) {
-  document.getElementById(id).innerHTML = newHTML;
-}
-
 function regularScreen1() {
-  editHTML("github-link-text", "Github");
-  editHTML("discord-link-text", "Discord");
-  editHTML("youtube-link-text", "YouTube");
-  editHTML("spotify-link-text", "Spotify");
+  //   editHtml("github-link-text", "Github");
+  //   editHtml("discord-link-text", "Discord");
+  //   editHtml("youtube-link-text", "YouTube");
+  //   editHtml("spotify-link-text", "Spotify");
 }
 function phoneScreen1() {
-  editHTML("github-link-text", "");
-  editHTML("discord-link-text", "");
-  editHTML("youtube-link-text", "");
-  editHTML("spotify-link-text", "");
+  // removes text from footer icons to save space
+  //   editHtml("github-link-text", "");
+  //   editHtml("discord-link-text", "");
+  //   editHtml("youtube-link-text", "");
+  //   editHtml("spotify-link-text", "");
 }
+
+// function editHtml(id, newHTML) {
+//   document.getElementById(id).innerHTML = newHTML;
+// }
 
 let mediaQuery = window.matchMedia("(min-width: 480px)");
 
@@ -113,7 +114,6 @@ function screenCheck(e, notFirstTime) {
   if (e.matches) {
     regularScreen1();
   } else if (notFirstTime) {
-    console.log("b");
     phoneScreen1();
   }
 }
