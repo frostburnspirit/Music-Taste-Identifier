@@ -3,11 +3,11 @@ let footer = document.getElementById("footer");
 
 let headerHtml = `
 <div id="logo">
-    <div id="logo-image">
+    <a href="index.html" id="logo-image">
         <i id="logo-lines-top" class="fa-regular fa-circle logo-icon"></i>
         <i id="logo-lines-bottom" class="fa-regular fa-circle logo-icon"></i>
         <i id="logo-fire" class="fa-solid fa-fire logo-icon"></i>
-    </div>
+    </a>
     <h1 id="logo-text">
         Frostifry
     </h1>
@@ -59,15 +59,25 @@ let footerHtml = `
         </li>
     </ul>
 </div>
-<div id="footer-links">
-    <h2>Links</h2>
-    <div class="flex-br"></div>
-    <a href="https://github.com/frostburnspirit/Music-Taste-Identifier" target="_blank"><i class="fa-brands fa-github"></i><p>Github</p></a>
-    <a href="https://discord.gg/UBSeZXk7Jb" target="_blank"><i class="fa-brands fa-discord"></i><br><p>Discord</p></a>
-    <a href="https://www.youtube.com/@frostburnspirit9065" target="_blank"><i class="fa-brands fa-youtube"></i><br><p>YouTube</p></a>
-    <a href="https://open.spotify.com/user/kk2va0daimie47hl2f8xmmcfx?si=90f51ea22f884ae4" target="_blank"><i class="fa-brands fa-spotify"></i><br><p>Spotify</p></a>
-</div>
-<div id="footer-language">
+<div id="footer-links-settings">
+    <div id="footer-links">
+        <h2>Links</h2>
+        <div class="flex-br"></div>
+        <a href="https://github.com/frostburnspirit/Music-Taste-Identifier" target="_blank"><i class="fa-brands fa-github"></i><br><p>Github</p></a>
+        <a href="https://discord.gg/UBSeZXk7Jb" target="_blank"><i class="fa-brands fa-discord"></i><br><p>Discord</p></a>
+        <div class="flex-br"></div>
+        <a href="https://www.youtube.com/@frostburnspirit9065" target="_blank"><i class="fa-brands fa-youtube"></i><br><p>YouTube</p></a>
+        <a href="https://open.spotify.com/user/kk2va0daimie47hl2f8xmmcfx?si=90f51ea22f884ae4" target="_blank"><i class="fa-brands fa-spotify"></i><br><p>Spotify</p></a>
+    </div>
+    <form id="language-form" class="range-container">
+        <label for="language-select">Language</label>
+        <select id="language-select" name="language">
+            <option value="en">English</option>
+            <option value="se">Svenska</option>
+            <option value="de">Deutsch</option>
+            <option value="pt">Português</option>
+        </select>
+    </form>
 </div>
 `;
 
@@ -104,9 +114,17 @@ function phoneScreen1() {
   //   editHtml("spotify-link-text", "");
 }
 
-// function editHtml(id, newHTML) {
-//   document.getElementById(id).innerHTML = newHTML;
-// }
+function editHtml(id, newHTML, extra) {
+  if (extra === "delete") {
+    document.getElementById(id).remove();
+  } else if (extra === "before") {
+    document.getElementById(id).insertAdjacentHTML("beforebegin", newHTML);
+  } else if (extra === "after") {
+    document.getElementById(id).insertAdjacentHTML("afterend", newHTML);
+  } else {
+    document.getElementById(id).innerHTML = newHTML;
+  }
+}
 
 let mediaQuery = window.matchMedia("(min-width: 480px)");
 

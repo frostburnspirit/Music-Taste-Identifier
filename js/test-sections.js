@@ -60,6 +60,51 @@ let sectionData = [
     <img src="images/Mimic.png" />
     <h1>bbb</h1>
     <div class="flex-br"></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Name</th>
+          <th>Name</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td>Name</td>
+          <td>Name</td>
+          <td>Name</td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>Name</td>
+          <td>Name</td>
+          <td>Name</td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>Name</td>
+          <td>Name</td>
+          <td>Name</td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>Name</td>
+          <td>Name</td>
+          <td>Name</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>aa</td>
+          <td>aa</td>
+          <td>aa</td>
+          <td>aa</td>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="flex-br"></div>
     <input type="submit">`,
   },
 ];
