@@ -1,21 +1,31 @@
 const sectionContainer = document.getElementById("the-test");
 
-sectionContainer.style.right = sectionData.length * 100 + "vw";
-
-function nextSection(sectionChild) {
-  if (LAYOUT == "phone") {
-    sectionContainer.getElementsByClassName("test-filler")[0].remove();
-  } else if (LAYOUT == "regular") {
+function changeSection(sectionChild, direction) {
+  if (LAYOUT === "phone") {
+    if (direction === "next") {
+      sectionContainer.getElementsByClassName("test-filler")[0].remove();
+    } else {
+      sectionContainer.insertAdjacentHTML(
+        "afterbegin",
+        `<div class="test-filler"></div>`
+      );
+    }
+  } else if (LAYOUT === "regular") {
     let currentElement = sectionChild;
     for (let i = 0; i < 100; i++) {
       if (currentElement.classList.contains("test-section")) {
         currentElement
           .getElementsByClassName("section-content")[0]
-          .classList.remove("section-content-open");
-        currentElement.nextElementSibling
-          .getElementsByClassName("section-content")[0]
-          .classList.add("section-content-open");
-
+          .classList.remove("content-open");
+        if (direction === "next") {
+          currentElement.nextElementSibling
+            .getElementsByClassName("section-content")[0]
+            .classList.add("content-open");
+        } else {
+          currentElement.previousElementSibling
+            .getElementsByClassName("section-content")[0]
+            .classList.add("content-open");
+        }
         return;
       } else {
         currentElement = currentElement.parentElement;
@@ -39,7 +49,6 @@ for (let i = 0; i < sectionData.length; i++) {
         <h3>
           ${DATA.title}
         </h3>
-        <div class="section-bar-arrow fa-solid fa-angle-left"></div>
       </div>
       <div class="section-content">
         ${DATA.content}
@@ -50,6 +59,7 @@ for (let i = 0; i < sectionData.length; i++) {
 
 function updateLayout2() {
   if (LAYOUT === "phone") {
+    sectionContainer.style.right = sectionData.length * 100 + "vw";
     for (let i = 0; i < sectionData.length; i++) {
       const FILLER_DIV = `
       <div class="test-filler">
@@ -58,17 +68,41 @@ function updateLayout2() {
     }
     [...sectionContainer.getElementsByClassName("section-content")].forEach(
       (element) => {
-        if (!element.classList.contains("section-content-open")) {
-          element.classList.add("section-content-open");
+        if (!element.classList.contains("content-open")) {
+          element.classList.add("content-open");
         }
       }
     );
+    [...sectionContainer.getElementsByClassName("section-bar-arrow")].forEach(
+      (element) => element.remove()
+    );
   } else if (LAYOUT === "regular") {
+    sectionContainer.style.right = 0;
     [...sectionContainer.getElementsByClassName("test-filler")].forEach(
+      (element) => element.remove()
+    );
+    [...sectionContainer.getElementsByClassName("content-open")].forEach(
       (element) => {
-        element.remove();
+        element.classList.remove("content-open");
       }
     );
+    document
+      .getElementById("section-1")
+      .getElementsByClassName("section-content")[0]
+      .classList.add("content-open");
+    [...sectionContainer.getElementsByClassName("section-bar")].forEach(
+      (element) =>
+        element.insertAdjacentHTML(
+          "beforeend",
+          `<div class="section-bar-arrow fa-solid fa-angle-left">
+          </div>`
+        )
+    );
+    document
+      .getElementById("section-1")
+      .getElementsByClassName("section-bar")[0]
+      .getElementsByClassName("section-bar-arrow")[0]
+      .classList.add("rotate");
   }
 }
 
@@ -77,8 +111,8 @@ for (const iterator of document.getElementsByClassName("section-bar")) {
     if (LAYOUT === "regular") {
       iterator
         .getElementsByClassName("section-bar-arrow")[0]
-        .classList.toggle("section-arrow-open");
-      iterator.nextElementSibling.classList.toggle("section-content-open");
+        .classList.toggle("rotate");
+      iterator.nextElementSibling.classList.toggle("content-open");
     }
   });
 }

@@ -6,7 +6,7 @@ let sectionData = [
     <img src="images/Mimic.png" />
     <h2>bbb</h2>
     <div class="flex-br"></div>
-    <button onclick="nextSection(this); return false;">continue</button>`,
+    <button onclick="changeSection(this, 'next'); return false;">continue</button>`,
   },
   {
     title: "Options",
@@ -15,7 +15,8 @@ let sectionData = [
     <img src="images/Mimic.png" />
     <h1>bbb</h1>
     <div class="flex-br"></div>
-    <button onclick="nextSection(this); return false;">continue</button>`,
+    <button onclick="changeSection(this, 'previous'); return false;">previous</button>
+    <button onclick="changeSection(this, 'next'); return false;">continue</button>`,
   },
   {
     title: "Genre Sliders",
@@ -35,7 +36,8 @@ let sectionData = [
       <label for="deep-bright">Deep vs Bright</label>
       <input type="range" min="0" max="10" id="deep-bright" name="deep-bright">
     </div>
-    <button onclick="nextSection(this); return false;">continue</button>`,
+    <button onclick="changeSection(this, 'previous'); return false;">previous</button>
+    <button onclick="changeSection(this, 'next'); return false;">continue</button>`,
   },
   {
     title: "Listening 1",
@@ -46,10 +48,11 @@ let sectionData = [
     <div class="flex-br"></div>
     <div class="button-container flex-center">
       <p>opinion</p>
+      <button onclick="changeSection(this, 'previous'); return false;">previous</button>
       <input type="hidden" name="buttons-l1" id="buttons-l1" value="">
-      <button onclick="select(this); nextSection(this); return false;" id="button1">button1</button>
-      <button onclick="select(this); nextSection(this); return false;" id="button2">button2</button>
-      <button onclick="select(this); nextSection(this); return false;" id="button3">button3</button>
+      <button onclick="select(this); changeSection(this, 'next'); return false;" id="button1">button1</button>
+      <button onclick="select(this); changeSection(this, 'next'); return false;" id="button2">button2</button>
+      <button onclick="select(this); changeSection(this, 'next'); return false;" id="button3">button3</button>
     <div>
 `,
   },
@@ -105,6 +108,7 @@ let sectionData = [
       </tfoot>
     </table>
     <div class="flex-br"></div>
+    <button onclick="changeSection(this, 'previous'); return false;">previous</button>
     <input type="submit">`,
   },
 ];

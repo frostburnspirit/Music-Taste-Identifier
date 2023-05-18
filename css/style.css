@@ -6,7 +6,7 @@
 :root {
   --header-height: 15vh;
   --header-size: 5vh;
-  --footer-height: 230px;
+  --footer-height: calc(170px + 10vw);
   --dark: rgb(45, 0, 40);
   --medium-dark: rgb(20, 30, 70);
   --medium-bright: rgb(50, 90, 120);
@@ -21,73 +21,27 @@ body {
   background-attachment: fixed;
 }
 
-/* General */
-
-.flex-br {
-  flex-basis: 100%;
-  width: 0;
-}
-
-a,
-label {
-  text-decoration: none;
-  color: var(--bright);
-}
-
-a:link {
-  color: var(--bright);
-}
-
-a:visited {
-  color: var(--medium-bright);
-}
-
-a:hover {
-  color: var(--bright);
-}
-
-a:active {
-  color: var(--medium-bright);
-}
-
-h2 {
-  font-size: 2rem;
-  color: var(--bright);
-}
-
-h3 {
-  font-size: 1.7rem;
-  color: var(--bright);
-}
-
-.range-container {
-  display: flex;
-  flex-flow: column wrap;
-  width: 100%;
-}
-
-/* */
-
 /* Header */
 
 header {
   position: relative;
-  display: block;
-  height: var(--header-height);
+  display: flex;
   background-color: var(--dark);
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-header div {
-  margin: 0 5vw;
+#header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: var(--header-height);
 }
 
 #logo {
-  position: absolute;
-  transform: translate(0, -50%);
-  top: 50%;
-  left: 0;
+  flex: 1;
   width: fit-content;
   display: flex;
   justify-content: center;
@@ -135,18 +89,45 @@ header div {
   font-size: var(--header-size);
 }
 
-nav {
-  height: 80%;
-  flex: 6;
-  display: none;
+#header-menu {
+  width: var(--header-size);
+  font-size: var(--header-size);
+  text-align: center;
+  color: var(--fire);
+  aspect-ratio: 1;
+  right: 3vw;
+  top: 50%;
+  transition: 450ms;
+  margin-right: 5vw;
+}
+
+.header-bottom {
+  max-height: 0;
+  /* I needed to override this rule with the content-open class and this class was my lazy solution*/
+}
+
+#header-bottom {
+  transition: 400ms;
+  background-color: var(--medium-dark);
+  display: flex;
+  width: 100vw;
+  overflow: hidden;
+  height: var(--header-size);
   align-items: center;
-  justify-content: center;
+}
+
+nav {
+  flex: 6;
+  align-items: center;
+  overflow: hidden;
+  justify-content: flex-start;
+  margin-left: 2vw;
 }
 
 nav ul {
   display: flex;
   padding-left: 0;
-  gap: 10%;
+  gap: 5%;
 }
 
 nav ul li {
@@ -158,19 +139,15 @@ nav ul li a {
   padding: 0.8vw;
   border-radius: 1vw;
   white-space: nowrap;
-  font-size: calc(var(--header-size) / 2);
+  font-size: calc(var(--header-size) / 2.5);
 }
 
 nav ul li a:hover {
-  background-color: var(--medium-dark);
+  background-color: var(--medium-bright);
 }
 
 #login {
-  flex: 1;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  right: 0;
+  margin: 0 2vw;
 }
 
 /* */
@@ -215,15 +192,10 @@ main {
 }
 
 .section-bar-arrow {
-  display: none;
   width: 1.2rem;
   aspect-ratio: 1;
   transition: 170ms;
   font-size: 1.2rem;
-}
-
-.section-arrow-open {
-  rotate: 270deg;
 }
 
 .section-content {
@@ -231,16 +203,9 @@ main {
   transition: 100ms ease-in-out;
   display: flex;
   flex-wrap: wrap;
-  /* height: 10%; */
   max-height: 0;
   gap: 10px;
   justify-content: center;
-}
-
-.section-content-open {
-  max-height: 100vh;
-  padding: 1vw;
-  /* height: 200%; */
 }
 
 .section-content .range-container label,
@@ -288,6 +253,7 @@ tfoot tr {
   background-color: var(--medium-dark);
   border-radius: 10px;
   overflow: hidden;
+  flex-direction: column;
 }
 
 #contact-form h2 {
@@ -379,6 +345,62 @@ footer div ul li a {
 
 /* */
 
+/* General */
+
+.flex-br {
+  flex-basis: 100%;
+}
+
+a,
+label {
+  text-decoration: none;
+  color: var(--bright);
+}
+
+a:link {
+  color: var(--bright);
+}
+
+a:visited {
+  color: var(--medium-bright);
+}
+
+a:hover {
+  color: var(--bright);
+}
+
+a:active {
+  color: var(--medium-dark);
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--bright);
+}
+
+h3 {
+  font-size: 1.7rem;
+  color: var(--bright);
+}
+
+.range-container {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+}
+
+.rotate {
+  rotate: 270deg;
+  transform: scale(1.25);
+}
+
+.content-open {
+  max-height: 100vh;
+  padding: 1vw;
+}
+
+/* */
+
 /* Media queries */
 @media (min-width: 480px) {
   :root {
@@ -387,14 +409,8 @@ footer div ul li a {
   }
 
   header {
-    display: flex;
-    justify-content: center;
+    height: var(--header-height);
   }
-
-  header div {
-    margin: initial;
-  }
-
   #logo {
     flex: 2;
     margin-right: 2vw;
@@ -408,33 +424,31 @@ footer div ul li a {
     display: flex;
     justify-content: flex-start;
   }
+  nav ul {
+    gap: 10%;
+  }
+  nav ul li a {
+    font-size: calc(var(--header-size) / 2);
+  }
   #login {
-    position: initial;
-    transform: initial;
+    margin: initial;
   }
 
   #the-test {
     flex-direction: column;
     align-self: center;
   }
-
   .test-section {
     width: 80vw;
     border-radius: 10px;
   }
 
-  .section-bar-arrow {
-    display: initial;
-  }
-
   #footer-links {
     width: 210px;
   }
-
   #footer-links a p {
     display: initial;
   }
-
   #footer-links div:nth-child(5) {
     display: none;
   }
