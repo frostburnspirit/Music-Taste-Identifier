@@ -7,15 +7,15 @@
   --header-height: 15vh;
   --header-size: 5vh;
   --footer-height: 230px;
-  --blue-1: rgb(45, 0, 40);
-  --blue-2: rgb(20, 30, 70);
-  --blue-3: rgb(50, 90, 120);
-  --blue-4: rgb(162, 219, 211);
-  --fire-1: rgb(255, 170, 0);
+  --dark: rgb(45, 0, 40);
+  --medium-dark: rgb(20, 30, 70);
+  --medium-bright: rgb(50, 90, 120);
+  --bright: rgb(162, 219, 211);
+  --fire: rgb(255, 170, 0);
 }
 
 body {
-  background-color: var(--blue-1);
+  background-color: var(--dark);
   background-image: url("../images/space.jpg");
   background-size: cover;
   background-attachment: fixed;
@@ -31,33 +31,33 @@ body {
 a,
 label {
   text-decoration: none;
-  color: var(--blue-4);
+  color: var(--bright);
 }
 
 a:link {
-  color: var(--blue-4);
+  color: var(--bright);
 }
 
 a:visited {
-  color: var(--blue-3);
+  color: var(--medium-bright);
 }
 
 a:hover {
-  color: var(--blue-4);
+  color: var(--bright);
 }
 
 a:active {
-  color: var(--blue-3);
+  color: var(--medium-bright);
 }
 
 h2 {
   font-size: 2rem;
-  color: var(--blue-4);
+  color: var(--bright);
 }
 
 h3 {
   font-size: 1.7rem;
-  color: var(--blue-1);
+  color: var(--bright);
 }
 
 .range-container {
@@ -74,7 +74,7 @@ header {
   position: relative;
   display: block;
   height: var(--header-height);
-  background-color: var(--blue-1);
+  background-color: var(--dark);
   justify-content: space-between;
   align-items: center;
 }
@@ -109,7 +109,7 @@ header div {
 }
 
 .logo-icon {
-  color: var(--fire-1);
+  color: var(--fire);
   position: absolute;
   left: calc(var(--header-size) * 0.5);
   transform: translate(-50%);
@@ -131,7 +131,7 @@ header div {
 }
 
 #logo h1 {
-  color: var(--fire-1);
+  color: var(--fire);
   font-size: var(--header-size);
 }
 
@@ -162,7 +162,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: var(--blue-2);
+  background-color: var(--medium-dark);
 }
 
 #login {
@@ -181,11 +181,18 @@ main {
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
   display: flex;
   flex-direction: column;
+  width: 100vw;
+  overflow: hidden;
 }
 
 #the-test {
   display: flex;
   width: fit-content;
+  position: relative;
+}
+
+.test-filler {
+  width: 100vw;
 }
 
 .test-section {
@@ -199,7 +206,7 @@ main {
   display: flex;
   align-items: center;
   height: 3vh;
-  background-color: var(--blue-3);
+  background-color: var(--medium-bright);
   padding: 10px;
 }
 
@@ -220,7 +227,7 @@ main {
 }
 
 .section-content {
-  background-color: var(--blue-2);
+  background-color: var(--medium-dark);
   transition: 100ms ease-in-out;
   display: flex;
   flex-wrap: wrap;
@@ -244,30 +251,30 @@ main {
 }
 
 table {
-  background-color: var(--blue-4);
+  background-color: var(--bright);
   border-collapse: collapse;
-  border: 2px solid var(--blue-4);
+  border: 2px solid var(--bright);
 }
 
 td,
 th {
-  border: 1px solid var(--blue-1);
+  border: 1px solid var(--dark);
 }
 
 thead tr {
-  background-color: var(--blue-2);
+  background-color: var(--medium-dark);
 }
 
 tr {
-  background-color: var(--blue-3);
+  background-color: var(--medium-bright);
 }
 
 tr:nth-child(even) {
-  background-color: var(--blue-2);
+  background-color: var(--medium-dark);
 }
 
 tfoot tr {
-  background-color: var(--blue-4);
+  background-color: var(--bright);
 }
 
 /* */
@@ -278,7 +285,7 @@ tfoot tr {
   display: flex;
   width: 80vw;
   margin: 4vh auto 0 auto;
-  background-color: var(--blue-2);
+  background-color: var(--medium-dark);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -298,7 +305,7 @@ tfoot tr {
 
 #contact-form label {
   margin-top: 2%;
-  color: var(--blue-4);
+  color: var(--bright);
 }
 
 #subject-container {
@@ -310,7 +317,7 @@ tfoot tr {
 
 footer {
   height: var(--footer-height);
-  background-color: var(--blue-1);
+  background-color: var(--dark);
   display: flex;
   position: relative;
   justify-content: space-evenly;
@@ -351,11 +358,11 @@ footer div ul li a {
 }
 
 #footer-links a {
-  color: var(--blue-3);
+  color: var(--medium-bright);
 }
 
 #footer-links a:hover {
-  color: var(--blue-4);
+  color: var(--bright);
 }
 
 #footer-links a i {
@@ -406,7 +413,7 @@ footer div ul li a {
     transform: initial;
   }
 
-  main form {
+  #the-test {
     flex-direction: column;
     align-self: center;
   }

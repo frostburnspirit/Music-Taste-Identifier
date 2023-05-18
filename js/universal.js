@@ -25,9 +25,9 @@ let headerHtml = `
         </li>
     </ul>
 </nav>
-<div id="login">
+<button id="login">
     login
-</div>`;
+</button>`;
 header.insertAdjacentHTML("beforeend", headerHtml);
 
 let footerHtml = `
@@ -127,13 +127,15 @@ function editHtml(id, newHTML, extra) {
 }
 
 let mediaQuery = window.matchMedia("(min-width: 480px)");
+let LAYOUT = false;
 
 function screenCheck(e, notFirstTime) {
   if (e.matches) {
-    regularScreen1();
-  } else if (notFirstTime) {
-    phoneScreen1();
+    LAYOUT = "regular";
+  } else {
+    LAYOUT = "phone";
   }
+  updateLayout2();
 }
 
 screenCheck(mediaQuery, false);
