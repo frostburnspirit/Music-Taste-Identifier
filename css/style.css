@@ -471,7 +471,7 @@ section {
 /* Media queries */
 @media (min-width: 480px) {
   :root {
-    --header-height: calc(2vw + 40px);
+    --header-height: calc(2vw + 60px);
     --header-size: calc(2vw + 15px);
   }
 

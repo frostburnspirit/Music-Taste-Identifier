@@ -10,7 +10,7 @@ let sectionData = [
         of a school assignment).
       </p>
     </article>
-    <img src="images/piano.jpg" />
+    <img src="images/piano.jpg" alt="a piano" />
     <div class="flex-br"></div>
     <button onclick="changeSection(this, 'next'); return false;">continue</button>`,
   },
@@ -55,7 +55,7 @@ let sectionData = [
       <h3>Listen to this music..</h3>
       <p>(hint: there is no music)</p>
     </article>
-    <img src="images/piano.jpg" />
+    <img src="images/piano.jpg" alt="a piano" />
     <div class="flex-br"></div>
     <div class="button-container flex-center">
       <p>opinion</p>
