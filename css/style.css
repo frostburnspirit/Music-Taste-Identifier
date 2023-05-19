@@ -17,7 +17,7 @@
 :root {
   --header-height: 15vh;
   --header-size: 5vh;
-  --footer-height: calc(170px + 10vw);
+  --footer-height: calc(250px + 5vw);
   --dark: rgb(40, 0, 30);
   --medium-dark: rgb(50, 55, 110);
   --medium-bright: rgb(80, 110, 140);
@@ -68,7 +68,6 @@ header {
   height: inherit;
   min-width: var(--header-size);
   max-width: var(--header-size);
-  border: calc(var(--header-size) * 0.15) solid black;
   border-radius: 50%;
   overflow: hidden;
   margin-left: calc(var(--header-size) / 3);
@@ -97,15 +96,16 @@ header {
 }
 
 h1 {
-  font-size: calc(var(--header-size));
+  font-size: var(--header-size);
   font-family: "Fancy Header";
+  transform: translate(0, 10%);
 }
 
 #header-menu {
   width: var(--header-size);
   font-size: var(--header-size);
   text-align: center;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
   right: 3vw;
   top: 50%;
   transition: 450ms;
@@ -173,7 +173,6 @@ main {
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
   display: flex;
   flex-direction: column;
-  width: 100vw;
   overflow: hidden;
   margin: 4vh 0;
 }
@@ -186,13 +185,6 @@ main {
 
 .test-filler {
   width: 100vw;
-}
-
-.test-section {
-  width: 100vw;
-  height: fit-content;
-  margin: 5px auto;
-  overflow: hidden;
 }
 
 .section-bar {
@@ -209,7 +201,7 @@ main {
 
 .section-bar-arrow {
   width: 1.2rem;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
   transition: 170ms;
   font-size: 1.2rem;
 }
@@ -374,6 +366,10 @@ label {
   color: var(--bright);
 }
 
+div {
+  color: var(--medium-bright);
+}
+
 a:link {
   color: var(--bright);
 }
@@ -447,6 +443,13 @@ h3 {
   }
 }
 
+section {
+  width: 100vw;
+  height: fit-content;
+  margin: 5px auto;
+  overflow: hidden;
+}
+
 /* */
 
 /* Media queries */
@@ -486,7 +489,7 @@ h3 {
     flex-direction: column;
     align-self: center;
   }
-  .test-section {
+  section {
     width: 80vw;
     border-radius: 10px;
   }
