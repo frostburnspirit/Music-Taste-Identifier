@@ -4,11 +4,11 @@ let footer = document.getElementById("footer");
 let headerHtmlRegular = `
 <div id="logo">
     <a href="index.html" id="logo-image">
-        <i id="logo-lines-top" class="fa-regular fa-circle logo-icon"></i>
-        <i id="logo-lines-bottom" class="fa-regular fa-circle logo-icon"></i>
-        <i id="logo-fire" class="fa-solid fa-fire logo-icon"></i>
+        <i id="logo-lines-top" class="fa-regular fa-circle logo-icon fire"></i>
+        <i id="logo-lines-bottom" class="fa-regular fa-circle logo-icon fire"></i>
+        <i id="logo-fire" class="fa-solid fa-fire logo-icon fire"></i>
     </a>
-    <h1 id="logo-text">
+    <h1 id="logo-text" class="fire">
         Frostifry
     </h1>
 </div>
@@ -37,7 +37,7 @@ let headerHtmlPhone = `
             <i id="logo-lines-bottom" class="fa-regular fa-circle logo-icon"></i>
             <i id="logo-fire" class="fa-solid fa-fire logo-icon"></i>
         </a>
-        <h1 id="logo-text">
+        <h1 id="logo-text" class="fire">
             Frostifry
         </h1>
     </div>

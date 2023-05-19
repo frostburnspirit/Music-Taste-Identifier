@@ -1,17 +1,30 @@
+@font-face {
+  font-family: "Fancy Header";
+  src: url(../fonts/Galberik.otf);
+}
+
+@font-face {
+  font-family: "Modern Antiqua";
+  src: url(../fonts/ModernAntiqua.ttf);
+}
+
 * {
   margin: 0;
   scroll-behavior: smooth;
+  font-family: "Modern Antiqua";
 }
 
 :root {
   --header-height: 15vh;
   --header-size: 5vh;
   --footer-height: calc(170px + 10vw);
-  --dark: rgb(45, 0, 40);
-  --medium-dark: rgb(20, 30, 70);
-  --medium-bright: rgb(50, 90, 120);
-  --bright: rgb(162, 219, 211);
-  --fire: rgb(255, 170, 0);
+  --dark: rgb(40, 0, 30);
+  --medium-dark: rgb(50, 55, 110);
+  --medium-bright: rgb(80, 110, 140);
+  --bright: rgb(160, 240, 230);
+  --fire-1: rgb(255, 100, 0);
+  --fire-2: rgb(255, 200, 0);
+  --fire-3: rgb(255, 255, 100);
 }
 
 body {
@@ -63,7 +76,6 @@ header {
 }
 
 .logo-icon {
-  color: var(--fire);
   position: absolute;
   left: calc(var(--header-size) * 0.5);
   transform: translate(-50%);
@@ -84,9 +96,9 @@ header {
   font-size: calc(var(--header-size) * 0.55);
 }
 
-#logo h1 {
-  color: var(--fire);
-  font-size: var(--header-size);
+h1 {
+  font-size: calc(var(--header-size));
+  font-family: "Fancy Header";
 }
 
 #header-menu {
@@ -142,6 +154,10 @@ nav ul li a {
   font-size: calc(var(--header-size) / 2.5);
 }
 
+nav ul li a:link {
+  color: var(--medium-bright);
+}
+
 nav ul li a:hover {
   background-color: var(--medium-bright);
 }
@@ -160,6 +176,7 @@ main {
   flex-direction: column;
   width: 100vw;
   overflow: hidden;
+  margin: 4vh 0;
 }
 
 #the-test {
@@ -249,7 +266,7 @@ tfoot tr {
 #contact-form {
   display: flex;
   width: 80vw;
-  margin: 4vh auto 0 auto;
+  margin: 0 auto;
   background-color: var(--medium-dark);
   border-radius: 10px;
   overflow: hidden;
@@ -298,6 +315,7 @@ footer div {
 
 footer div ul {
   margin-left: -40px;
+  color: var(--medium-bright);
 }
 
 footer div ul li a {
@@ -397,6 +415,34 @@ h3 {
 .content-open {
   max-height: 100vh;
   padding: 1vw;
+  box-shadow: inset 0 5px 10px var(--dark);
+}
+
+.fire {
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    70deg,
+    var(--fire-1),
+    var(--fire-2),
+    var(--fire-1),
+    var(--fire-3),
+    var(--fire-1),
+    var(--fire-2),
+    var(--fire-1)
+  );
+  background-size: 300%;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  animation: fire-animation 7s linear infinite;
+}
+
+@keyframes fire-animation {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
 }
 
 /* */
