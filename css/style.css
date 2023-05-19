@@ -150,7 +150,7 @@ nav ul li a {
   padding: 0.8vw;
   border-radius: 1vw;
   white-space: nowrap;
-  /* font-size: 3vw; */
+  font-size: 3.3vw;
 }
 
 nav ul li a:link {
@@ -497,7 +497,7 @@ section {
   nav ul li a,
   nav ul li a:link,
   nav ul li a:visited {
-    font-size: calc(var(--header-size) / 2);
+    font-size: 2vw;
     color: var(--medium-bright);
   }
   nav ul li a:hover {
