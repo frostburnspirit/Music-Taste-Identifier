@@ -2,18 +2,27 @@ let sectionData = [
   {
     title: "Intro",
     content: `
-    <h1>Welcome</h1>
-    <img src="images/Mimic.png" />
-    <h2>bbb</h2>
+    <article>
+      <h3>Welcome to Spotifry's Music Taste Identifier</h3>
+      <p>Here you will be able to find out what kinds of music you
+      really like (or rather, would be, if the functionality
+        if the site was actually completed unlike the one 
+        of a school assignment).
+      </p>
+    </article>
+    <img src="images/piano.jpg" />
     <div class="flex-br"></div>
     <button onclick="changeSection(this, 'next'); return false;">continue</button>`,
   },
   {
     title: "Options",
     content: `
-    <h1>Welcome</h1>
-    <img src="images/Mimic.png" />
-    <h1>bbb</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Ut convallis egestas tortor, eget condimentum ipsum fringilla sed.
+    Proin mollis et urna tincidunt ultricies. Proin id lorem euismod,
+    dapibus lacus non, facilisis urna. Nullam dignissim aliquet urna,
+    id gravida ligula interdum suscipit.
+    </p>
     <div class="flex-br"></div>
     <button onclick="changeSection(this, 'previous'); return false;">previous</button>
     <button onclick="changeSection(this, 'next'); return false;">continue</button>`,
@@ -42,9 +51,11 @@ let sectionData = [
   {
     title: "Listening 1",
     content: `
-    <h3>Listen to this music..</h3>
-    <div class="flex-br"></div>
-    <img class="flex-center" src="images/Mimic.png" />
+    <article>
+      <h3>Listen to this music..</h3>
+      <p>(hint: there is no music)</p>
+    </article>
+    <img src="images/piano.jpg" />
     <div class="flex-br"></div>
     <div class="button-container flex-center">
       <p>opinion</p>
@@ -59,51 +70,51 @@ let sectionData = [
   {
     title: "End",
     content: `
-    <h1>Welcome</h1>
-    <img src="images/Mimic.png" />
-    <h1>bbb</h1>
-    <div class="flex-br"></div>
+    <article>
+      <h3>The End</h3>
+      <p>I hoped you enjoyed this.. well.. incomplete mess..</p>
+    </article>
     <table>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Name</th>
-          <th>Name</th>
-          <th>Name</th>
+          <th>---------</th>
+          <th>---------</th>
+          <th>---------</th>
+          <th>---------</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Name</td>
-          <td>Name</td>
-          <td>Name</td>
-          <td>Name</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
         </tr>
         <tr>
-          <td>Name</td>
-          <td>Name</td>
-          <td>Name</td>
-          <td>Name</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
         </tr>
         <tr>
-          <td>Name</td>
-          <td>Name</td>
-          <td>Name</td>
-          <td>Name</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
         </tr>
         <tr>
-          <td>Name</td>
-          <td>Name</td>
-          <td>Name</td>
-          <td>Name</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
-          <td>aa</td>
-          <td>aa</td>
-          <td>aa</td>
-          <td>aa</td>
+          <td>I was</td>
+          <td>required</td>
+          <td>to put a</td>
+          <td>table here</td>
         </tr>
       </tfoot>
     </table>

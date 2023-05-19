@@ -19,13 +19,21 @@ let contactForm = `
           </select>
       </div>
       <label for="mail-content">Your Message:</label>
-      <textarea id="mail-content" name="mail-content" rows="10" cols="50" placeholder="Write your message here..."></textarea>
+      <textarea id="mail-content" name="mail-content" rows="10" cols="25" placeholder="Write your message here..."></textarea>
       <label for="send">Send Mail</label>
       <input type="submit" name="send" id="send" value="Send">
     </form>
  </section>`;
 
 formSection.insertAdjacentHTML("beforeend", contactForm);
+
+function updateLayout3() {
+  if (LAYOUT === "phone") {
+    document.getElementById("mail-content").cols = 25;
+  } else {
+    document.getElementById("mail-content").cols = 50;
+  }
+}
 
 document.getElementById("subject").addEventListener("change", function () {
   if (this.value === "other") {

@@ -159,6 +159,9 @@ function screenCheck(e) {
   try {
     updateLayout2();
   } catch {}
+  try {
+    updateLayout3();
+  } catch {}
 }
 
 screenCheck(mediaQuery);
